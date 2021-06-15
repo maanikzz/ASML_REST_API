@@ -9,14 +9,23 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ASML</groupId>
-	<artifactId>SpringbootDownload</artifactId>
+	<artifactId>ASML-REST-SERVICE</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringbootDownload</name>
-	<description>Demo project for Spring Boot</description>
+	<name>ASML-REST-SERVICE</name>
+	<description>Service to fetch Screenshots and Generated images for ASML</description>
+	
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+	
 	<dependencies>
+	
+	   <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -27,13 +36,42 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+        
+        <dependency>
+              <groupId>com.h2database</groupId>
+              <artifactId>h2</artifactId>
+              <scope>test</scope>
+        </dependency>
+		
+		<dependency>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-devtools</artifactId>
+               <optional>false</optional>
+         </dependency>
 	</dependencies>
 
 	<build>
+	    <finalName>ASML-REST-SERVICE</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+                  <execution>
+                      <goals>
+                        <goal>repackage</goal>
+                       </goals>
+               <configuration>
+                        <classifier>spring-boot</classifier>
+                        <mainClass>${/ASML-REST-SERVICE/src/main/java/com/ASML/SpringbootDownload/SpringbootDownloadApplication.java}</mainClass>
+                </configuration>
+                   </execution>
+                 </executions>
 			</plugin>
 		</plugins>
 	</build>

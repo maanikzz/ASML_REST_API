@@ -11,8 +11,9 @@ public class MessageConstants
 
     public static final String FILE_NOT_CREATED = "File cannot be created";
 
-    public static final String FILE_NOT_READ = "File cannot be read";
+    public static final String FILE_NOT_READ = "File cannot be read ";
 
-    public static final String FILE_NOT_LOADED = "File(s) cannot be loaded";
+    public static final String FILE_NOT_LOADED = "File(s) cannot be loaded ,"
+    		+ " Please check the folder locations from Application.properties ";
 
 }
